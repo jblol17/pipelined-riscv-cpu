@@ -31,6 +31,7 @@ output logic [31:0] alu_result, output logic zero
             5'b00001: alu_result = rs1 - rs2;
             5'b00010: alu_result = rs1 & rs2;
             5'b00011: alu_result = rs1 | rs2;
+            default:
         endcase
     end
     

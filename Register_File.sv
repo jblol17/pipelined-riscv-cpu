@@ -23,9 +23,9 @@
 module Register_File(input clk, input logic [4:0] rs1, input logic [4:0] rs2, input logic write_enable, 
 input logic [4:0] register_to_write, input logic [31:0] data_to_write,
 output logic [31:0] rs1_data, output logic [31:0] rs2_data
-
     );
-    // Think of assigning all the data to zero at first?????
+
+    // TODO: Think of assigning all the data to zero at first?????
     
     logic [31:0] registers [0:31]; // 32, 32-bit registers x0-x31
     

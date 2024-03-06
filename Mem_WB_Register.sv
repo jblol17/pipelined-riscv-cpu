@@ -20,7 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Mem_WB_Register(
-
+module Mem_WB_Register(input clk, input logic [31:0] alu_result_mem, input logic [31:0] read_data_mem, input logic [4:0] rd_mem, input logic [31:0] pc_p_4_mem,
+output logic [31:0] alu_result_wb, output logic [31:0] read_data_wb, output logic [4:0] rd_wb, output logic [31:0] pc_p_4_wb
     );
+
+
+    always_ff @( negedge clk ) begin
+        alu_result_wb <= alu_result_mem;
+        read_data_wb <= read_data_mem;
+        rd_wb <= rd_mem;
+        pc_p_4_wb <= pc_p_4_mem;
+        
+    end
 endmodule

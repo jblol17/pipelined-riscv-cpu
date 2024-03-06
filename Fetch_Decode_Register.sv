@@ -19,13 +19,16 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module Fetch_Decode_Register(input clk, input logic [31:0] instruction_out, input logic [31:0] pc, input logic [31:0] pc_p_four,
+// TODO: Needs control unit signals
+module Fetch_Decode_Register(input clk, input logic [31:0] instruction_f, input logic [31:0] pc_f, input logic [31:0] pc_p_four_f,
 output logic [31:0] instruction_d, output logic [31:0] pc_d, output logic [31:0] pc_p_four_d 
     );
-    
-    always @(negedge clk) begin
-        
+
+    // TODO: I think it's negedge jaja
+    always_ff @( negedge clk ) begin
+        instruction_d <= instruction_f;
+        pc_d = pc_f;
+        pc_p_four_d = pc_p_four_f;
     end
     
 endmodule

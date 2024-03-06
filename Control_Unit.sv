@@ -38,14 +38,33 @@ parameter OP_ALU = 7'b0110011;
 parameter OP_FENCE = 7'b0001111;
 parameter OP_ECALL = 7'b1110011;
 
-// Case for instructions
-always_ff begin
+// Case for instructions. RV31I
+always_comb 
     case (opcode) 
-    
-    
-    endcase
-end
+        OP_LUI:
 
+        OP_AUIPC:
+
+        OP_JAL:
+
+        OP_JALR:
+
+        OP_BRANCH:
+
+        OP_LBYTE:
+
+        OP_STORE:
+
+        OP_IMM:
+
+        OP_ALU:
+
+        OP_FENCE:
+
+        OP_ECALL:
+
+        default: 
+    endcase
 
 
 endmodule
