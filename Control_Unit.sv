@@ -38,7 +38,7 @@ parameter OP_ALU = 7'b0110011;
 parameter OP_FENCE = 7'b0001111;
 parameter OP_ECALL = 7'b1110011;
 
-// Case for instructions. RV31I
+// Case for instructions. RV32I
 always_comb 
     case (opcode) 
         OP_LUI:

@@ -23,7 +23,11 @@
 module Execute_Mem_Register(input clk, input logic [31:0] alu_result_ex, input logic [31:0] rs2_data_ex, input logic [4:0] rd_ex,
 input logic [31:0] pc_p_4_ex,
 
-output logic [31:0] alu_result_mem, output logic [31:0] rs2_data_mem, output logic [4:0] rd_mem, output logic [31:0] pc_p_4_mem
+input logic [0:0] register_write_ex, input logic [1:0] result_src_ex, input logic [0:0] mem_write_enable_ex,
+
+output logic [31:0] alu_result_mem, output logic [31:0] rs2_data_mem, output logic [4:0] rd_mem, output logic [31:0] pc_p_4_mem,
+
+output logic [0:0] register_write_mem, output logic [1:0] result_src_mem, output logic [0:0] mem_write_enable_mem 
     );
 
     always_ff @( negedge clk ) begin 
@@ -32,6 +36,9 @@ output logic [31:0] alu_result_mem, output logic [31:0] rs2_data_mem, output log
         rd_mem <= rd_ex;
         pc_p_4_mem <= pc_p_4_ex;
 
+        register_write_mem <= register_write_ex;
+        result_src_mem <= result_src_ex;
+        mem_write_enable_mem <= mem_write_enable_ex;
     end
 
 endmodule
