@@ -25,11 +25,15 @@ input logic [31:0] pc_d, input logic [4:0] rd_d, input logic [31:0] immediate_ex
 input logic [0:0] register_write_d, input logic [1:0] result_src_d, input logic [0:0] mem_write_enable_d, input logic [0:0] jump_d,
 input logic [0:0] branch_d, input logic [4:0] alu_control_d, input logic [0:0] alu_src_d,
 
+input logic [4:0] rs1_d, input logic [4:0] rs2_d,
+
 output logic [31:0] rs1_data_ex, output logic [31:0] rs2_data_ex, output logic [31:0] pc_ex, output logic [4:0] rd_ex,
 output logic [31:0] immediate_extend_ex, output logic [31:0] pc_p_4_ex,
 
 output logic [0:0] register_write_ex, output logic [1:0] result_src_ex, output logic [0:0] mem_write_enable_ex, output logic [0:0] jump_ex,
-output logic [0:0] branch_ex, output logic [4:0] alu_control_ex, output logic [0:0] alu_src_ex
+output logic [0:0] branch_ex, output logic [4:0] alu_control_ex, output logic [0:0] alu_src_ex,
+
+output logic [4:0] rs1_ex, output logic [4:0] rs2_ex
 );
     always_ff @( negedge clk ) begin
         rs1_data_ex <= rs1_data_d;
