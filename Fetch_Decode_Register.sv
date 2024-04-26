@@ -21,14 +21,24 @@
 
 // TODO: Needs control unit signals
 module Fetch_Decode_Register(input clk, input logic [31:0] instruction_f, input logic [31:0] pc_f, input logic [31:0] pc_p_four_f,
+input logic [0:0] stall_decode,
 output logic [31:0] instruction_d, output logic [31:0] pc_d, output logic [31:0] pc_p_four_d 
     );
 
-    // TODO: I think it's negedge jaja
+    // TODO: I think it's negedge jaja. Add stall logic. 
     always_ff @( negedge clk ) begin
-        instruction_d <= instruction_f;
-        pc_d = pc_f;
-        pc_p_four_d = pc_p_four_f;
+        if (stall_decode == 0) begin
+            instruction_d <= instruction_f;
+            pc_d = pc_f;
+            pc_p_four_d = pc_p_four_f;    
+        end
+        // ???????
+        if (stall_decode == 1) begin
+            instruction_d <= 0;
+            pc_d = 0;
+            pc_p_four_d = 0;
+        end
+        
     end
     
 endmodule

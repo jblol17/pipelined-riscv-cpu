@@ -21,10 +21,12 @@
 
 
 module Program_Counter(input clk,input logic [31:0] pc_in, 
+input logic [0:0] stall_fetch,
 output logic [31:0] pc_out
     );
 
-// Should this be alwaysff? alwayslatch?     
+// Should this be alwaysff? alwayslatch?   
+// TODO: Add stall logic
 always @(posedge clk) begin
     pc_out <= pc_in;
 end
