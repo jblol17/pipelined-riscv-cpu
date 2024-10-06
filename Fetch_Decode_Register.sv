@@ -15,13 +15,13 @@
 // 
 // Revision:
 // Revision 0.01 - File Created
-// Additional Comments:
+//* Additional Comments: Design Schematic #5
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Needs control unit signals
 module Fetch_Decode_Register(input clk, input logic [31:0] instruction_f, input logic [31:0] pc_f, input logic [31:0] pc_p_four_f,
-input logic [0:0] stall_decode,
+input logic [0:0] stall_decode, input logic [0:0] flush_decode,
 output logic [31:0] instruction_d, output logic [31:0] pc_d, output logic [31:0] pc_p_four_d 
     );
 
